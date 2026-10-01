@@ -27,4 +27,4 @@ test -f development-in-phases.md
 ## Keep this workflow safe
 
 - Preserve the AI workflow files: `.cursorrules`, `.clinerules`, `CLAUDE.md`, `development-in-phases.md`, `docs/doc.md`, `docs/phases/`, `docs/completed/`, `.gitignore`, `.githooks/`, and `prompts/`.
-- Only remove optional template files such as `CONTRIBUTING.md` or `LICENSE` when you explicitly want a leaner project starter or a different project license.
+- Remove only optional template files when you explicitly want a leaner project starter and they are not required by the phase workflow.

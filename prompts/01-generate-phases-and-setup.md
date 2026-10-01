@@ -18,9 +18,7 @@ STEP 0: OPTIONAL TEMPLATE CLEANUP
 If the user wants a minimal project-ready repository instead of a reusable template, perform a safe cleanup before building the project.
 
 Allowed cleanup actions:
-- Remove optional repo-admin files only if the user explicitly wants a leaner starter project, such as:
-  - `CONTRIBUTING.md`
-  - `LICENSE` (only if a different license will replace it)
+- Remove optional repo-admin or project-meta files only if the user explicitly wants a leaner starter project.
 - Keep all files required for the phase-driven workflow and project continuity.
 - Never delete the following files unless the user explicitly wants a full reset and is replacing the template with a completely new app:
   - `.cursorrules`
@@ -98,7 +96,7 @@ Remove all previous template/setup rules from `README.md` and replace them with:
 3. How to Run & Test the Application locally.
 4. Project Development Roadmap (listing the phase files created in `docs/phases/` and how to execute them step-by-step).
 5. A note that completed work should be archived in `docs/completed/` before moving to the next phase.
-6. A note about optional cleanup of template-only files such as `CONTRIBUTING.md` and `LICENSE` if the user wants a leaner repo.
+6. A note about optional cleanup of non-essential template files if the user wants a leaner repo.
 
 Keep the execution engines intact (`development-in-phases.md`, `.cursorrules`, `.clinerules`, `CLAUDE.md`, and `docs/phases/`).
 

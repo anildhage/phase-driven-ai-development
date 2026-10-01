@@ -25,8 +25,7 @@ Safe cleanup rules:
   - `README.md` only if you are replacing it with project-specific documentation
 
 Optional cleanup candidates:
-- `CONTRIBUTING.md` — remove if you want the repo to feel like a private or product-specific starter project.
-- `LICENSE` — remove only if you are replacing it with a different license for the new project.
+- repo-admin or project-meta files that are not required by the phase workflow may be removed if the user wants a leaner starter project.
 - `docs/` files that are not relevant to the project brief may be trimmed, but preserve `doc.md`, `phases/`, and `completed/` unless the user intentionally wants a stripped-down repo.
 
 Checklist:

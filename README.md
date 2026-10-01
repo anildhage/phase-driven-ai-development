@@ -37,7 +37,6 @@ A lightweight starter for building products with an AI-assisted, phase-based wor
 ├── .githooks/
 │   └── pre-commit
 ├── .gitignore
-├── CONTRIBUTING.md
 ├── LICENSE
 ```
 
