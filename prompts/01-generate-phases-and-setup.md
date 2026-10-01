@@ -1,0 +1,54 @@
+# 🚀 Master Phase Generator & Repository Setup Prompt
+
+> **Instructions for the developer:** 
+> 1. Paste your raw project ideas, specifications, or requirements into `docs/doc.md`.
+> 2. Copy the entire prompt block below and paste it into your AI assistant (Cursor, Claude Code, Cline, etc.).
+> 3. Let the AI generate your development roadmap and transform this repository into your application's home!
+
+---
+
+### Copy & Paste This Prompt into Your AI Assistant:
+
+```text
+You are acting as the Lead Systems Architect. Perform the following 3-step setup and phase generation process based on this project repository:
+
+---------------------------------------------------------------
+STEP 1: ANALYZE REQUIREMENTS & ARCHITECTURE
+---------------------------------------------------------------
+1. Read `docs/doc.md` to understand the full application goals, technical stack, and target features.
+2. Read `development-in-phases.md` to review the 7 SDLC Mental Models:
+   - Model A: Layered Foundation (Scaffolding / Environment)
+   - Model B: Isolated Spike (3rd-Party SDKs / Unfamiliar APIs)
+   - Model C: Vertical Slice (User-facing feature flows)
+   - Model D: Schema-First / Contract-Driven (Database / ORM / API schemas)
+   - Model E: Strangler Fig / Incremental Refactor (Refactoring / Migrations)
+   - Model F: Hardening & Benchmarking (Performance / Security / Errors)
+   - Model G: Infra-as-Code & Observability (CI/CD / Docker / Hosting)
+
+---------------------------------------------------------------
+STEP 2: GENERATE INDIVIDUAL PHASE DOCUMENTS
+---------------------------------------------------------------
+Break down the requirements in `docs/doc.md` into sequential, 30-to-60-minute micro-win phases inside `docs/phases/`.
+
+For EVERY phase created (e.g., `docs/phases/phase-01-setup.md`, `docs/phases/phase-02-db-schema.md`), ensure the document contains:
+1. Phase Goal & Applied SDLC Mental Model (with rationale for why that model was chosen).
+2. Upstream Dependencies & Prerequisites (what phase/config must exist first).
+3. Tech Development Stack & Packages (exact `npm install` or `pip install` commands needed).
+4. Step-by-Step Implementation Checklist (bite-sized, sequential tasks).
+5. Local Verification & Commands (terminal commands or actions to confirm the phase works).
+6. Reflection & Learning Hook (a brief explanation of key technical choices made).
+
+---------------------------------------------------------------
+STEP 3: REWRITE ROOT README.MD FOR THE NEW APPLICATION
+---------------------------------------------------------------
+Now that all phase files are created in `docs/phases/`, OVERWRITE the root `README.md` file so it becomes the official documentation for the application defined in `docs/doc.md`.
+
+Remove all previous template/setup rules from `README.md` and replace them with:
+1. Application Name & Overview (derived from `docs/doc.md`).
+2. Tech Stack & Environment Setup instructions.
+3. How to Run & Test the Application locally.
+4. Project Development Roadmap (listing the phase files created in `docs/phases/` and how to execute them step-by-step).
+
+Keep the execution engines intact (`development-in-phases.md`, `.cursorrules`, `.clinerules`, `CLAUDE.md`, and `docs/phases/`).
+
+Confirm when all phase files are generated in `docs/phases/` and `README.md` has been successfully updated!

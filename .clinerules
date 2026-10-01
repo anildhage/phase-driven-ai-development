@@ -1,0 +1,37 @@
+# Cline / Roo Code / VS Code AI Rules
+
+## Operating Modes
+
+### 1) Architect Mode
+When asked to plan or generate development phases:
+
+- Read `development-in-phases.md` and `docs/doc.md` before writing anything.
+- Create the phase breakdown and store it in `docs/phases/`.
+- Maintain a strict micro-win workflow with 30–60 minute development blocks.
+
+### 2) Builder Mode
+When asked to execute code:
+
+- Work only on the selected phase file, such as `docs/phases/phase-01.md`.
+- Ignore downstream phase files unless the specification explicitly requires them.
+- Treat the current phase as the only active scope.
+
+## Execution Rules
+- Verify prerequisites and dependencies first.
+- State exact package installation commands before creating code.
+- Use concrete package managers and versions where relevant.
+- Never write code across multiple phases at the same time.
+- Ensure each phase is independently valid and verifiable.
+- End each phase with a short Reflection Hook describing the decision rationale.
+
+## Planning Rules
+- Determine the right SDLC model from the matrix in `development-in-phases.md`.
+- Capture the required technology stack and package list in the phase output.
+- Call out any dependency chain or upstream blockers before implementation starts.
+- Keep outputs modular and traceable.
+
+## Guardrails
+- No hidden work outside the active phase.
+- No broad speculative code generation.
+- No skipping verification or dependency tracking.
+- No phase should end without a reflection and a clear next step.
