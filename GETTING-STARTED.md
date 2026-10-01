@@ -9,7 +9,15 @@
 7. Validate the phase before moving on.
 8. After a successful phase, create a completion record in `docs/completed/`.
 9. Do not start the next phase until the previous one is documented and validated.
-10. When you want a cleaner repo, use `prompts/02-cleanup-template-for-project.md` to remove optional template-only files.
+10. If you want extra discipline, enable the local Git safety check once:
+
+```bash
+git config core.hooksPath .githooks
+```
+
+This hook helps prevent moving to the next phase without recording the previous one. It is a small but powerful reminder to stay focused and avoid shallow, untracked work.
+
+11. When you want a cleaner repo, use `prompts/02-cleanup-template-for-project.md` to remove optional template-only files.
 
 ## Recommended first run
 

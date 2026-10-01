@@ -47,6 +47,9 @@ STEP 1: ANALYZE REQUIREMENTS & ARCHITECTURE
    - Model E: Strangler Fig / Incremental Refactor (Refactoring / Migrations)
    - Model F: Hardening & Benchmarking (Performance / Security / Errors)
    - Model G: Infra-as-Code & Observability (CI/CD / Docker / Hosting)
+3. Recommend enabling the local Git safety hook once the repo is cloned so users stay disciplined about phase completion:
+   - `git config core.hooksPath .githooks`
+4. Explain that this hook is optional but strongly recommended for phase discipline and focused execution.
 
 ---------------------------------------------------------------
 STEP 2: GENERATE INDIVIDUAL PHASE DOCUMENTS
