@@ -23,6 +23,9 @@ When asked to execute code:
 - Never write code across multiple phases at the same time.
 - Ensure each phase is independently valid and verifiable.
 - End each phase with a short Reflection Hook describing the decision rationale.
+- After a phase passes validation, create or update `docs/completed/<phase-name>.md`.
+- Before moving to the next phase or committing code, confirm the prior phase has a completed record and outcome summary.
+- Do not proceed without documenting the finished work.
 
 ## Planning Rules
 - Determine the right SDLC model from the matrix in `development-in-phases.md`.

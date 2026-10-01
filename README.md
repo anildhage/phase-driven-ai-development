@@ -22,8 +22,12 @@ It helps turn a raw idea or project brief into a sequence of small, testable, an
 ├── development-in-phases.md
 ├── .gitignore
 ├── README.md
+├── .githooks/
+│   └── pre-commit
 ├── docs/
 │   ├── doc.md
+│   ├── completed/
+│   │   └── phase-completion-template.md
 │   └── phases/
 │       └── .gitkeep
 ```
@@ -35,6 +39,45 @@ It helps turn a raw idea or project brief into a sequence of small, testable, an
 3. Ask your AI assistant to generate or refine phase files in `docs/phases/`.
 4. Work one phase at a time.
 5. Validate each phase before moving to the next.
+6. When a phase passes validation, document it in `docs/completed/` before the next phase or a git commit.
+
+## Phase completion tracking
+
+The repository now enforces a handoff checkpoint for each phase:
+
+- Completed work should be captured in `docs/completed/<phase-name>.md`.
+- The completion record must explain what was built, what was validated, and what the next step is.
+- Before moving to the next phase, verify the previous phase is documented and archived.
+- Before committing, check that the current phase has a matching completion summary.
+
+To enable the git safety check:
+
+```bash
+git config core.hooksPath .githooks
+```
+
+## Quick start
+
+For the shortest path, start with `GETTING-STARTED.md`.
+
+## Optional cleanup for a lean project start
+
+If a user wants a cleaner project template after downloading this repo, they can run the optional cleanup prompt in `prompts/02-cleanup-template-for-project.md`.
+
+This cleanup is intentionally limited to template-only files and should never remove the workflow essentials:
+
+- `.cursorrules`
+- `.clinerules`
+- `CLAUDE.md`
+- `development-in-phases.md`
+- `docs/doc.md`
+- `docs/phases/`
+- `docs/completed/`
+- `.gitignore`
+- `.githooks/`
+- `prompts/`
+
+The usual candidate files for removal are only optional repo metadata such as `CONTRIBUTING.md` and `LICENSE`, and only when the user wants a more minimal starter experience or a new project license.
 
 ## AI workflow rules
 

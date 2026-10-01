@@ -10,7 +10,32 @@
 ### Copy & Paste This Prompt into Your AI Assistant:
 
 ```text
-You are acting as the Lead Systems Architect. Perform the following 3-step setup and phase generation process based on this project repository:
+You are acting as the Lead Systems Architect. Perform the following setup, cleanup, and phase generation process based on this project repository:
+
+---------------------------------------------------------------
+STEP 0: OPTIONAL TEMPLATE CLEANUP
+---------------------------------------------------------------
+If the user wants a minimal project-ready repository instead of a reusable template, perform a safe cleanup before building the project.
+
+Allowed cleanup actions:
+- Remove optional repo-admin files only if the user explicitly wants a leaner starter project, such as:
+  - `CONTRIBUTING.md`
+  - `LICENSE` (only if a different license will replace it)
+- Keep all files required for the phase-driven workflow and project continuity.
+- Never delete the following files unless the user explicitly wants a full reset and is replacing the template with a completely new app:
+  - `.cursorrules`
+  - `.clinerules`
+  - `CLAUDE.md`
+  - `development-in-phases.md`
+  - `docs/doc.md`
+  - `docs/phases/`
+  - `docs/completed/`
+  - `.gitignore`
+  - `.githooks/`
+  - `prompts/`
+  - `README.md` if it is being rewritten for the new app
+
+If the user does not ask for cleanup, do not remove anything.
 
 ---------------------------------------------------------------
 STEP 1: ANALYZE REQUIREMENTS & ARCHITECTURE
@@ -39,7 +64,31 @@ For EVERY phase created (e.g., `docs/phases/phase-01-setup.md`, `docs/phases/pha
 6. Reflection & Learning Hook (a brief explanation of key technical choices made).
 
 ---------------------------------------------------------------
-STEP 3: REWRITE ROOT README.MD FOR THE NEW APPLICATION
+STEP 3: CAPTURE COMPLETED PHASE OUTPUTS
+---------------------------------------------------------------
+For every phase that is completed and validated, create a matching completion summary file in `docs/completed/`.
+
+Each completion summary should be named after the phase, such as:
+- `docs/completed/phase-01-setup.md`
+- `docs/completed/phase-02-db-schema.md`
+
+Each completion file must include:
+1. Phase name and completion date
+2. Goal and outcome of the phase
+3. SDLC model used and why it was chosen
+4. Files changed or created
+5. Commands executed and validation result
+6. Risks, assumptions, and remaining blockers
+7. The next recommended phase or milestone
+8. A brief reflection hook summarizing the learning
+
+Important rules:
+- Do not start the next phase until the previous phase is documented in `docs/completed/`.
+- Do not commit code to a remote repository without a matching phase completion summary.
+- If the completion record is missing, stop and create it before proceeding.
+
+---------------------------------------------------------------
+STEP 4: REWRITE ROOT README.MD FOR THE NEW APPLICATION
 ---------------------------------------------------------------
 Now that all phase files are created in `docs/phases/`, OVERWRITE the root `README.md` file so it becomes the official documentation for the application defined in `docs/doc.md`.
 
@@ -48,7 +97,9 @@ Remove all previous template/setup rules from `README.md` and replace them with:
 2. Tech Stack & Environment Setup instructions.
 3. How to Run & Test the Application locally.
 4. Project Development Roadmap (listing the phase files created in `docs/phases/` and how to execute them step-by-step).
+5. A note that completed work should be archived in `docs/completed/` before moving to the next phase.
+6. A note about optional cleanup of template-only files such as `CONTRIBUTING.md` and `LICENSE` if the user wants a leaner repo.
 
 Keep the execution engines intact (`development-in-phases.md`, `.cursorrules`, `.clinerules`, `CLAUDE.md`, and `docs/phases/`).
 
-Confirm when all phase files are generated in `docs/phases/` and `README.md` has been successfully updated!
+Confirm when all phase files are generated in `docs/phases/`, completion summaries are added to `docs/completed/`, any optional cleanup is complete, and `README.md` has been successfully updated!

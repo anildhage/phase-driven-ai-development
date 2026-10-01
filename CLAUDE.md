@@ -22,6 +22,9 @@ Use this mode for implementation work.
 - Never generate code across multiple phases simultaneously.
 - Each phase must have a clear validation step.
 - Include a brief Reflection Hook at the end of every phase to explain why the implementation choices were made.
+- When a phase is complete and validated, create or update `docs/completed/<phase-name>.md`.
+- Before starting the next phase or committing code, confirm that the previous phase has a completion record in `docs/completed/`.
+- Do not proceed to the next milestone if the completed work is not documented.
 
 ## SDLC and Planning Rules
 - Assign each task to the correct model from the seven-model matrix in `development-in-phases.md`.

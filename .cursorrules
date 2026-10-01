@@ -26,6 +26,9 @@ Use this mode when the user asks you to execute implementation work.
 - Never write code across multiple phases at once.
 - Every phase must result in something that compiles, runs, or renders visibly.
 - End every phase with a brief Reflection Hook explaining why the chosen approach was the right one.
+- When a phase is successfully validated, create or update `docs/completed/<phase-name>.md`.
+- Before starting the next phase, or before committing code, verify the previous phase has a completion record in `docs/completed/`.
+- Do not continue to the next phase when the previous phase is undocumented or unverified.
 
 ## Phase Generation Rules
 - Read the project brief in `docs/doc.md`.

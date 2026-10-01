@@ -1,0 +1,23 @@
+#!/bin/sh
+set -eu
+
+# Enforce documentation of completed phases before commit if a phase file is staged.
+# This keeps the repo aligned with the phase-based workflow and preserves handoff context.
+
+staged_phase_files=$(git diff --cached --name-only --diff-filter=ACMR | grep '^docs/phases/.*\.md$' || true)
+
+if [ -n "$staged_phase_files" ]; then
+  for phase_file in $staged_phase_files; do
+    phase_name=$(basename "$phase_file" .md)
+    completion_file="docs/completed/${phase_name}.md"
+
+    if [ ! -f "$completion_file" ]; then
+      echo "Missing completion record: $completion_file" >&2
+      echo "Create the phase completion summary before committing this phase." >&2
+      echo "Tip: run: git config core.hooksPath .githooks" >&2
+      exit 1
+    fi
+  done
+fi
+
+exit 0
